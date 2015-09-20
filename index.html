@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel='stylesheet' type ='text/css' href='/bower_components/Slate/dist/css/slate.min.css'>
+	<link rel='stylesheet' type ='text/css' href='/css/style.css'>
+</head>
+<body>
+	<h1 class='title'>Prototype Configuration</h1>
+	<div class="item-container">
+  	 <div class="item-container-content">
+    	  <div class="item">
+     	   Configure your watch face setting here!
+   	  </div>
+  	 </div>
+	</div>
+
+	<div class="item-container">
+         <div class='item-container-header'>Customiability</div>
+          <div class="item-container-content">
+           <label class="item">
+      	    Background Colour
+	    <input id='backgroundColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
+   	   </label>
+          </div>
+	  <div class='item-container-footer'>
+	   Choose the background color of the watch face here
+          </div>
+         </div>
+
+	<div class="item-container">
+ 	  <div class="item-container-content">
+   	   <label class="item">
+      	    Toggle Seconds Hand
+            <input id='secondstoggle' type='checkbox' class='item-checkbox' checked>
+    	   </label>
+           </div>
+	   <div class='item-container-footer'>
+	    This toggles the viewing of the seconds hand, it can
+	    be turned off to conserve battery. You might like on
+	    for the aestetic
+ 	  </div>
+	</div>
+
+       <div class="item-container">
+        <div class="item-container-content">
+         <label class="item">
+	  Toggle Date
+	  <input id='datetoggle' type='checkbox' class='item-checkbox'  checked>
+         </label>
+        </div>
+	<div class='item-container-footer'>
+	 This toggles the viewing of the date, it can be 
+	 displayed or hidden
+	</div>
+       </div>
+       
+       <div class='item-container'>
+        <div class='item-container-content'>
+	 <label class='item'>
+	  Date Format
+    	  <input id='dateformat' type='checkbox' class='item-checkbox' checked>
+	 </label>
+	</div>
+	<div class='item-container-footer'>
+	 This toffles the date format from either
+         checked = DAY-MONTH
+	 unchecked = DAY-DATE-MONTH
+	</div>
+       </div>
+
+       <div class="item-container">
+        <div class="button-container">
+         <input id='submitButton' type='button' class='item-button' value='SUBMIT'>
+        </div>
+       </div>		
+	<script src='/bower_components/Slate/dist/js/slate.min.js'></script>
+	<script src='/js/main.js'></script>
+</body>
+</html>
+

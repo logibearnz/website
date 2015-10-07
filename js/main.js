@@ -31,7 +31,7 @@ function getAndStoreConfigData() {
 	localStorage.dateenabled = options.dateenabled;
 	localStorage.dateformat = options.dateformat;
 
-	console.log('Got options ' + JSON.stringify(options));
+	console.log(JSON.stringify(options));
 	return options;
 }
 

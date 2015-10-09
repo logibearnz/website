@@ -14,38 +14,29 @@ function submitHandler(){
 }
 
 function getAndStoreConfigData() {
-	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $secondstoggle = $('#secondstoggle');
-	var $datetoggle = $('#datetoggle');
-	var $dateformat = $('#dateformat');
-
+	
 	var options = {
-		backgroundColor: $backgroundColorPicker.val(),
 		secondsenabled: $secondstoggle[0].checked,
-		dateenabled: $datetoggle[0].checked,
-		dateformat: $dateformat[0].checked
+		
 	};
 
-	localStorage.backgroundColor = options.backgroundColor;
+
 	localStorage.secondsenabled = options.secondsenabled;
-	localStorage.dateenabled = options.dateenabled;
-	localStorage.dateformat = options.dateformat;
+
 
 	console.log(JSON.stringify(options));
 	return options;
 }
 
 function loadOptions(){
-    var $backgroundColorPicker = $('#backgroundColorPicker');
     var $secondstoggle = $('#secondstoggle');
-    var $datetoggle = $('#datetoggle');
-    var $dateformat = $('#dateformat');
+   
     
     if (localStorage.backgroundColor) {
-        $backgroundColorPicker[0].value = localStorage.backgroundColor;
-        $secondstoggle[0].checked = localStorage.secondsenabled; //=== 'true';
-	$datetoggle[0].checked = localStorage.dateenabled;// === 'true';
-	$dateformat[0].checked = localStorage.dateformat;// === 'true';
+ 
+        $secondstoggle[0].checked = localStorage.secondsenabled; /=== 'true';
+
     }
 }
 
@@ -64,5 +55,13 @@ function getQueryParam(variable, defaultValue) {
   }
   return defaultValue || false;
 }
+
+
+
+
+
+       
+        
+
 
 

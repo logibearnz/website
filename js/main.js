@@ -6,7 +6,7 @@
 function submitHandler(){
     var $submitButton = $('#submitButton');
         $submitButton.on('click', function() {
-            //console.log('Submit');
+            console.log('Submit');
 	    var return_to = getQueryParam('return_to', 'pebblejs://close#');
 	    document.location = return_to + encodeURIComponent(JSON.stringify(getAndStoreConfigData()));
 });
@@ -43,9 +43,9 @@ function loadOptions(){
     
     if (localStorage.backgroundColor) {
         $backgroundColorPicker[0].value = localStorage.backgroundColor;
-        $secondstoggle[0].checked = localStorage.secondsenabled; //=== 'true';
-	$datetoggle[0].checked = localStorage.dateenabled;// === 'true';
-	$dateformat[0].checked = localStorage.dateformat;// === 'true';
+        $secondstoggle[0].checked = localStorage.secondsenabled; === 'true';
+	$datetoggle[0].checked = localStorage.dateenabled; === 'true';
+	$dateformat[0].checked = localStorage.dateformat; === 'true';
     }
 }
 

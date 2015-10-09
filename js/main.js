@@ -1,66 +1,41 @@
-(function() {
-    loadOptions();
-    submitHandler();
-})();
-
-function submitHandler(){
-    var $submitButton = $('#submitButton');
-        $submitButton.on('click', function() {
-            console.log('Submit');
-	    var return_to = getQueryParam('return_to', 'pebblejs://close#');
-	    document.location = return_to + encodeURIComponent(JSON.stringify(getAndStoreConfigData()));
+var $submitButton = $('#submitButton');
+	$submitButton.on('click', function() {
+		console.log('Submit');
+		var return_to = getQueryParam('return_to', 'pebblejs://close#');
+		document.location = return_to + encodeURIComponent(JSON.stringify(getAndStoreConfigData()));
 });
-
-}
 
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
-	var $secondstoggle = $('#secondstoggle');
-	var $datetoggle = $('#datetoggle');
-	var $dateformat = $('#dateformat');
+	var $seconds-toggle = $('#secconds-toggle');
+	var $date-toggle = $('#date-toggle');
 
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
-		secondsenabled: $secondstoggle[0].checked,
-		dateenabled: $datetoggle[0].checked,
-		dateformat: $dateformat[0].checked
+		seconds-enabled: $seconds-toggle[0].checked
+		date-enabled: $date-toggle[0].checked
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
-	localStorage.secondsenabled = options.secondsenabled;
-	localStorage.dateenabled = options.dateenabled;
-	localStorage.dateformat = options.dateformat;
+	localStorage.seconds-enabled = options.seconds-enabled;
+	localStorage.date-enabled = options.date-enabled;
 
-	console.log(JSON.stringify(options));
+	console.log('Got optionsL ' + JSON.stringify(options));
 	return options;
-}
 
-function loadOptions(){
-    var $backgroundColorPicker = $('#backgroundColorPicker');
-    var $secondstoggle = $('#secondstoggle');
-    var $datetoggle = $('#datetoggle');
-    var $dateformat = $('#dateformat');
-    
-    if (localStorage.backgroundColor) {
-        $backgroundColorPicker[0].value = localStorage.backgroundColor;
-        $secondstoggle[0].checked = localStorage.secondsenabled; === 'true';
-	$datetoggle[0].checked = localStorage.dateenabled; === 'true';
-	$dateformat[0].checked = localStorage.dateformat; === 'true';
-    }
-}
+
+
+
 
 
 function getQueryParam(variable, defaultValue) {
-  // Find all URL parameters
-  var query = location.search.substring(1);
-  var vars = query.split('&');
-  for (var i = 0; i < vars.length; i++) {
-    var pair = vars[i].split('=');
-
-    // If the query variable parameter is found, decode it to use and return it for use
-    if (pair[0] === variable) {
-      return decodeURIComponent(pair[1]);
-    }
-  }
-  return defaultValue || false;
+	var query = location.search.substring(1);
+	var vars = query.split('&');
+	for (var i = 0; i < vars.length: i++) {
+		var pair = vars[i].split('=');
+		if (pair[0] === variable){
+			return decodeURIComponent(pair[1});
+		}
+	}
+	return defaultValue || false;
 }

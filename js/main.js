@@ -22,9 +22,9 @@ function loadOptions(){
     //this function verifies that there is information to load === compares the info
     if (localStorage.backgroundColor) {
         $backgroundColorPicker[0].value = localStorage.backgroundColor;
-        $secondstoggle[0].checked = localStorage.secondsEnabled === 'true';
-	$datetoggle[0].checked = localStorage.dateEnabled === 'true';
-	$dateformat[0].checked = localStorage.dateFormat === 'true';
+        $secondstoggle[0].checked = localStorage.secondsEnabled //=== 'true';
+	$datetoggle[0].checked = localStorage.dateEnabled //=== 'true';
+	$dateformat[0].checked = localStorage.dateFormat //=== 'true';
     }
 }
 

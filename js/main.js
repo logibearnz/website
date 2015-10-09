@@ -7,7 +7,7 @@ var $submitButton = $('#submitButton');
 
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
-	var $seconds-toggle = $('#secconds-toggle');
+	var $seconds-toggle = $('#seconds-toggle');
 	var $date-toggle = $('#date-toggle');
 
 	var options = {

@@ -76,39 +76,7 @@
         </div>
        </div>		
 	<script src='bower_components/Slate/dist/js/slate.min.js'></script>
-	
-	<script>
-      function saveOptions() {
-        var options = {
-          'option0':     Number( $("input[name=secondstoggle]:checked").val() )
-      
-        }
-        return options;
-      }
-      $().ready(function() {
-       if (typeof window.localStorage !== "undefined") {
-       	console.log("Not undefined :)");
-        if (window.localStorage.simple_analog) {
-          ls_pto = JSON.parse(window.localStorage.simple_analog);
-          // the Pebble webview dies on the next line...
-          $("input[name=secondstoggle][id=secondstoggle-"+ls_pto["option0"]+"]").prop('checked',true);
-          $("input[name=secondstoggle]").checkbox('refresh');
-         
-        }
-       }
-        
-        $("#SUBMIT").click(function() {
-          console.log("Submit");
-          ls_pto = JSON.stringify(saveOptions());
-          if (typeof window.localStorage !== "undefined") {
-            window.localStorage.simple_analog = ls_pto;
-          }
-          var location = "pebblejs://close#" + ls_pto;
-          console.log("Warping to: " + location);
-          console.log(location);
-          document.location = location;
-        });
-      });
-    </script>
+	<script src='js/main.js'></script>
+
 </body>
 </html>
